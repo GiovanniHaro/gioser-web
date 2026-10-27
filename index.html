@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GioSer Agencia Publicitaria</title>
+<meta name="description" content="GioSer, agencia publicitaria en Lima: branding, diseño, video, redes, web y pauta digital con un solo equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&display=swap">
+<link rel="icon" href="img/gs.svg" type="image/svg+xml">
+<style>
+body{margin:0}
+
+/* Layout: estilo de estudio limpio y aireado (referencia BOU): portada a todo ancho en azul marino, frases centradas en letra fina con palabras en negrita, grillas con líneas finas y degradados suaves celestes. Rojo solo en detalles. */
+:root{
+  --ink:#0a0f14;        /* texto principal */
+  --navy:#052941;       /* marca: portada, panel, botones */
+  --red:#e63718;        /* acento mínimo */
+  --white:#ffffff;
+  --gray:#6b7780;       /* texto secundario */
+  --soft:#ececec;       /* bloque gris tipo testimonio */
+  --tint:#e3edf5;       /* degradado celeste de marca */
+  --line:#d6dde2;
+  --f:"Hanken Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --gl:max(16px,env(safe-area-inset-left,0px));
+  --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--f);font-weight:300;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%;height:auto}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.02em;text-wrap:balance}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(24px,var(--gl));padding-right:max(24px,var(--gr))}
+.statement{font-size:clamp(28px,3.4vw,46px);line-height:1.15;text-align:center;max-width:16em;margin:0 auto}
+.more{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:400}
+.dot{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;display:inline-grid;place-items:center;font-size:12px;transition:background .2s ease,transform .2s ease}
+.more:hover .dot{background:var(--red);transform:translateX(3px)}
+.pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#eef1f3;font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+
+/* cabecera sobre la portada */
+.top{position:absolute;inset:env(safe-area-inset-top,0px) 0 auto;z-index:20;color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{font-weight:700;font-size:24px;letter-spacing:-.04em;display:flex;align-items:center;gap:8px}
+.logo img{width:64px;height:auto}
+.nav{display:flex;gap:30px;font-size:14px}
+.nav a{opacity:.92}.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.top .more .dot{background:#fff;color:var(--navy)}
+@media (max-width:860px){.nav{display:none}}
+
+/* portada */
+.hero{position:relative;background:var(--navy);color:#fff;padding-block:120px 72px;overflow:hidden}
+.hero .wrap{display:grid;justify-items:center;text-align:center;gap:28px}
+.hero video{width:min(420px,78vw);aspect-ratio:1;border-radius:6px}
+.hero h1{font-size:clamp(30px,3.6vw,50px);line-height:1.12;max-width:17em}
+.hero .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;align-items:center;font-size:13px}
+.hero .meta .pill{background:rgba(255,255,255,.12);color:#fff}
+.hero .meta span.mail{opacity:.75;margin-left:12px}
+
+/* frase de misión */
+.mission{padding-block:clamp(80px,10vw,140px) clamp(48px,6vw,80px);display:grid;justify-items:center;gap:36px}
+
+/* trabajos */
+.work{background:linear-gradient(180deg,var(--white) 0%,var(--tint) 100%);padding-bottom:clamp(64px,8vw,120px)}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px}
+.case{display:grid;gap:10px;align-content:start}
+.case .img{aspect-ratio:16/10;overflow:hidden;background:#dfe6eb;max-width:100%}
+.case img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.case:hover img{transform:scale(1.04)}
+.case h3{font-size:16px;font-weight:700;letter-spacing:0;margin-top:6px}
+.case p{color:var(--gray);font-size:14px}
+.case .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.center{display:flex;justify-content:center;margin-top:48px}
+@media (max-width:980px){.cases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.cases{grid-template-columns:1fr}}
+
+/* clientes */
+.clients{background:linear-gradient(180deg,var(--tint) 0%,var(--white) 100%);padding-block:clamp(64px,8vw,120px)}
+.clients .statement{margin-bottom:clamp(40px,5vw,72px)}
+.logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid rgba(5,41,65,.12);border-left:1px solid rgba(5,41,65,.12)}
+.logos div{aspect-ratio:1/.8;display:grid;place-items:center;text-align:center;padding:12px;border-right:1px solid rgba(5,41,65,.12);border-bottom:1px solid rgba(5,41,65,.12);font-size:clamp(15px,1.5vw,20px);transition:background .25s ease}
+.logos div:hover{background:rgba(255,255,255,.7)}
+.lg1{font-weight:700;letter-spacing:-.04em;font-style:italic}
+.lg2{font-weight:300;letter-spacing:.18em;text-transform:uppercase;font-size:14px!important}
+.lg3{font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.lg4{font-weight:500}
+.lg5{font-weight:400;font-family:Georgia,serif;font-style:italic}
+.lg6{font-weight:700;letter-spacing:-.02em}
+@media (max-width:860px){.logos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* bloque destacado (estilo testimonio) */
+.feature{padding-inline:max(24px,var(--gl)) max(24px,var(--gr))}
+.feature .box{max-width:1312px;margin:0 auto;background:var(--soft);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(20px,4vw,56px)}
+.feature .photo{position:relative;aspect-ratio:1;max-width:100%;overflow:hidden}
+.feature .photo img{width:100%;height:100%;object-fit:cover}
+.feature .photo .pill{position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,.5);color:#fff}
+.feature blockquote{margin:0;font-size:clamp(22px,2.4vw,32px);line-height:1.25;max-width:16em}
+.feature .who{margin-top:18px;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:400;margin-top:26px;transition:background .2s ease}
+.btn:hover{background:var(--red)}
+@media (max-width:760px){.feature .box{grid-template-columns:1fr}}
+
+/* servicios */
+.services{background:linear-gradient(180deg,var(--white) 0%,var(--tint) 100%);padding-block:clamp(72px,9vw,130px) clamp(40px,5vw,72px)}
+.services .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px}
+.services h2{font-size:clamp(26px,2.6vw,36px);line-height:1.2;max-width:15em}
+.services .lead{margin-top:28px;font-size:14px;max-width:34em;line-height:1.6}
+.services .lead a{text-decoration:underline;text-underline-offset:3px}
+.svc-list{display:grid;gap:2px;margin:18px 0 24px;padding:0;list-style:none}
+.svc-list li{font-size:clamp(22px,2.2vw,30px);line-height:1.25;transition:color .2s ease,transform .25s ease}
+.svc-list li:hover{color:var(--red);transform:translateX(6px)}
+@media (max-width:860px){.services .wrap{grid-template-columns:1fr}}
+
+/* carrusel de imágenes */
+.reel{background:var(--tint);padding-block:24px clamp(64px,8vw,110px)}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-inline:max(24px,var(--gl)) max(24px,var(--gr));scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:none;width:clamp(240px,24vw,360px);aspect-ratio:1;object-fit:cover;scroll-snap-align:start}
+
+/* panel del equipo */
+.team{background:linear-gradient(180deg,var(--tint) 0%,#dce9f3 60%,var(--white) 100%);padding-bottom:clamp(64px,8vw,110px)}
+.panel{background:var(--navy);color:#fff;overflow:hidden;padding-block:clamp(56px,7vw,96px) 40px;position:relative}
+.panel .head{display:grid;justify-items:center;text-align:center;gap:18px;padding-inline:24px}
+.panel .label{opacity:.75}
+.panel h2{font-size:clamp(30px,3.6vw,50px);line-height:1.12;max-width:18em}
+.panel p.sub{opacity:.8;max-width:30em}
+.panel .more .dot{background:#fff;color:var(--navy)}
+.rows{display:grid;gap:12px;margin-top:clamp(40px,5vw,64px)}
+.row{display:flex;gap:12px;width:max-content;animation:roll 60s linear infinite}
+.row.rev{animation-direction:reverse}
+.rows:hover .row{animation-play-state:paused}
+.role{width:210px;flex:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:14px 16px;display:grid;gap:6px}
+.role b{font-size:16px;font-weight:500}
+.role span{font-size:12px;opacity:.7}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* enlaces y barra de colaboración */
+.links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:clamp(48px,6vw,80px)}
+.links a{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:10px;font-size:clamp(18px,1.6vw,22px)}
+.links a span{transition:transform .2s ease}
+.links a:hover span{transform:translateX(6px);color:var(--red)}
+.collab{margin-top:24px;background:rgba(255,255,255,.55);display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;flex-wrap:wrap}
+.collab h3{font-size:20px;font-weight:400;letter-spacing:-.01em}
+.collab p{font-size:13px;color:var(--gray)}
+.collab a{border:1px solid var(--ink);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:400;transition:background .2s ease,color .2s ease}
+.collab a:hover{background:var(--ink);color:#fff}
+@media (max-width:760px){.links{grid-template-columns:1fr}}
+
+/* pie */
+.foot-top{padding-block:clamp(64px,8vw,110px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.foot-top h2{font-size:clamp(32px,3.6vw,50px);line-height:1.1;max-width:11em}
+.foot-top h2 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.foot-top h2 a:hover{color:var(--red)}
+.studio{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center}
+.studio .thumb{width:clamp(110px,12vw,170px);aspect-ratio:1/.85;background:var(--navy);display:grid;place-items:center}
+.studio .thumb img{width:78%}
+.studio h3{font-size:18px;font-weight:400}
+.studio p{font-size:clamp(18px,1.6vw,22px);color:var(--gray);line-height:1.25;margin-top:4px}
+.studio .btn2{display:inline-flex;margin-top:14px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:400}
+.studio .btn2:hover{border-color:var(--ink)}
+@media (max-width:860px){.foot-top{grid-template-columns:1fr}}
+.cols{background:#f2f2f2;padding-block:48px 24px}
+.cols .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.cols h4{margin:0 0 12px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.cols a{display:block;font-size:13px;color:#3b4650;padding-block:2px}
+.cols a:hover{color:var(--red)}
+.bar{margin-top:40px;background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:18px 24px;font-size:12px}
+.bar b{display:block;font-weight:700}
+.bar span{opacity:.8;user-select:all}
+@media (max-width:860px){.cols .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bar{grid-template-columns:1fr 1fr}}
+.legal{background:var(--ink);color:#fff;text-align:center;font-size:12px;padding:12px 16px;opacity:.95}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="GioSer, inicio"><img src="img/logo.svg" width="64" height="54" alt="GioSer"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#trabajos">Trabajos</a><a href="#servicios">Servicios</a><a href="#clientes">Clientes</a><a href="#equipo">Nosotros</a><a href="#planes">Planes</a>
+    </nav>
+    <a class="more" href="#contacto">Contacto <span class="dot" aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <video src="img/hero-logo.mp4" poster="img/hero-poster.webp" width="720" height="720" autoplay muted playsinline preload="auto" aria-label="Animación del logo GioSer"></video>
+      <h1>GioSer es una agencia publicitaria que crea, graba, publica y hace crecer marcas en branding, diseño, video, redes y web.</h1>
+      <div class="meta"><span class="pill">◉ Lima</span><span class="pill">◉ Todo el Perú</span><span class="mail">correo [por confirmar]</span></div>
+    </div>
+  </section>
+
+  <section class="mission">
+    <p class="statement">Tu marca merece <b>más que posts bonitos</b>. Merece un equipo que la haga comunicar, conectar y crecer.</p>
+    <a class="more" href="#equipo">Nosotros <span class="dot" aria-hidden="true">→</span></a>
+  </section>
+
+  <section class="work" id="trabajos">
+    <div class="wrap">
+      <div class="cases">
+        <article class="case">
+          <div class="img"><img src="img/c1.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Posts de campaña de Dassamóvil"></div>
+          <h3>Dassamóvil</h3><p>Campañas mensuales que llevan gente a tienda</p>
+          <div class="tags"><span class="pill">Diseño</span><span class="pill">Redes</span><span class="pill">Meta Ads</span></div>
+        </article>
+        <article class="case">
+          <div class="img"><img src="img/c2.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Tarjetas de Laboratorio Digital"></div>
+          <h3>Laboratorio Digital</h3><p>Identidad, manual de marca y logo animado</p>
+          <div class="tags"><span class="pill">Branding</span><span class="pill">Diseño</span><span class="pill">Motion</span></div>
+        </article>
+        <article class="case">
+          <div class="img"><img src="img/c3.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Carrusel de Ser Lucatme"></div>
+          <h3>Ser Lucatme</h3><p>Contenido educativo que termina en una cita</p>
+          <div class="tags"><span class="pill">Contenido</span><span class="pill">Redes</span></div>
+        </article>
+        <article class="case">
+          <div class="img"><img src="img/c4.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Logo de Clínica La Luz en blanco sobre azul"></div>
+          <h3>Clínica La Luz</h3><p>Logotipo vectorizado listo para todos los usos</p>
+          <div class="tags"><span class="pill">Branding</span><span class="pill">Vector</span></div>
+        </article>
+        <article class="case">
+          <div class="img"><img src="img/c5.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Logo de Step by Steph"></div>
+          <h3>Step by Steph</h3><p>Una marca personal que sube paso a paso</p>
+          <div class="tags"><span class="pill">Logotipo</span><span class="pill">Mockups</span></div>
+        </article>
+        <article class="case">
+          <div class="img"><img src="img/c6.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Ícono de matraz en pixel art"></div>
+          <h3>Ícono 8 bits</h3><p>Pixel art vectorial que no pierde nitidez</p>
+          <div class="tags"><span class="pill">Ilustración</span><span class="pill">Vector</span></div>
+        </article>
+      </div>
+      <div class="center"><a class="more" href="#contacto">Más trabajos <span class="dot" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="clients" id="clientes">
+    <div class="wrap">
+      <p class="statement">Trabajamos con <b>marcas de todo el Perú</b>, entre ellas:</p>
+      <div class="logos">
+        <div class="lg1">Dassamóvil</div><div class="lg2">Ser Lucatme</div><div class="lg3">Laboratorio Digital</div><div class="lg4">Clínica La Luz</div><div class="lg5">Step by Steph</div><div class="lg6">Tu marca aquí</div>
+      </div>
+      <div class="center"><a class="more" href="#contacto">Nuestros clientes <span class="dot" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="box">
+      <div class="photo"><img src="img/feature.webp" width="900" height="900" loading="lazy" decoding="async" alt="Asesor de ventas de Dassamóvil, foto de campaña"><span class="pill">Dassamóvil</span></div>
+      <div>
+        <blockquote>“Grabamos, diseñamos y publicamos nosotros. Por eso tu marca se ve igual de bien en el reel, en el post y en la tienda.”</blockquote>
+        <div class="who">Equipo GioSer<br>Producción propia, sin intermediarios</div>
+        <a class="btn" href="#contacto">Ver el caso</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios">
+    <div class="wrap">
+      <div>
+        <h2>Hacemos marcas que se ven, se recuerdan y venden: branding, diseño, video, redes y web.</h2>
+        <p class="lead">Porque tiene todo el sentido tenerlo en un solo lugar. Menos proveedores, menos correos de ida y vuelta y una sola línea de marca. Tú atiendes tu negocio y nosotros nos encargamos de que te vean, con <a href="#planes">un responsable de cuenta</a> y un reporte claro cada mes.</p>
+      </div>
+      <div>
+        <span class="label">Servicios</span>
+        <ul class="svc-list">
+          <li>Branding</li><li>Diseño gráfico</li><li>Redes sociales</li><li>Producción audiovisual</li><li>Edición de reels</li><li>Diseño web</li><li>Meta Ads y Google Ads</li><li>SEO</li>
+        </ul>
+        <a class="more" href="#contacto">Todos los servicios <span class="dot" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="reel">
+    <div class="track" tabindex="0" aria-label="Galería de trabajos">
+      <img src="img/g1.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g2.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g3.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g4.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g5.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g6.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g7.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+      <img src="img/g8.webp" width="440" height="440" loading="lazy" decoding="async" alt="">
+    </div>
+  </div>
+
+  <section class="team" id="equipo">
+    <div class="panel">
+      <div class="head">
+        <span class="label">1 equipo, 8 especialidades</span>
+        <h2>Nos encuentras en Lima. Y en tus redes. Y en Google. Y en tu WhatsApp.</h2>
+        <p class="sub">Estamos en Lima y trabajamos con marcas de todo el Perú. Así que, técnicamente, somos tus vecinos.</p>
+        <a class="more" href="#contacto">Conócenos <span class="dot" aria-hidden="true">→</span></a>
+      </div>
+      <div class="rows" aria-label="Perfiles del equipo">
+        <div class="row">
+          <div class="role"><b>Diseñador gráfico</b><span>Posts, carruseles y piezas impresas</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Editor de video</b><span>Reels, TikToks y spots</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Community manager</b><span>Calendario, publicación y respuesta</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Realizador</b><span>Grabación con equipo propio</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Fotógrafo</b><span>Producto, marca y eventos</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Diseñador gráfico</b><span>Posts, carruseles y piezas impresas</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Editor de video</b><span>Reels, TikToks y spots</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Community manager</b><span>Calendario, publicación y respuesta</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Realizador</b><span>Grabación con equipo propio</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Fotógrafo</b><span>Producto, marca y eventos</span><span>Lima, Perú</span></div>
+        </div>
+        <div class="row rev">
+          <div class="role"><b>Estratega</b><span>Posicionamiento y calendario</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Desarrollador web</b><span>Webs, landing pages y tiendas</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Especialista en Ads</b><span>Meta Ads y Google Ads</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Especialista SEO</b><span>Google y Google Business</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Motion designer</b><span>Logos animados y gráficos</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Estratega</b><span>Posicionamiento y calendario</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Desarrollador web</b><span>Webs, landing pages y tiendas</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Especialista en Ads</b><span>Meta Ads y Google Ads</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Especialista SEO</b><span>Google y Google Business</span><span>Lima, Perú</span></div>
+          <div class="role"><b>Motion designer</b><span>Logos animados y gráficos</span><span>Lima, Perú</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" id="planes">
+      <div class="links">
+        <a href="#trabajos">Trabajos <span>→</span></a>
+        <a href="#servicios">Servicios <span>→</span></a>
+        <a href="#contacto">Planes: Arranque, Crecimiento y Empresa <span>→</span></a>
+      </div>
+      <div class="collab">
+        <div><h3>¿Hacemos algo juntos?</h3><p>Estamos listos cuando tú lo estés. Propuesta en 48 horas.</p></div>
+        <a href="#contacto">Contrátanos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap foot-top">
+    <h2>Dicen que nadie lee el pie de página. ¡Ja! ¿<a href="#contacto">Hablamos</a>?</h2>
+    <div class="studio">
+      <div class="thumb"><img src="img/logo.svg" width="761" height="643" loading="lazy" decoding="async" alt="Logo GioSer"></div>
+      <div><h3>Lima</h3><p>Estudio GioSer<br>[distrito por confirmar]</p><a class="btn2" href="#contacto">Contacto →</a></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="wrap">
+      <div class="grid">
+        <div><h4>Agencia <span class="dot">→</span></h4><a href="#inicio">Inicio</a><a href="#equipo">Nosotros</a><a href="#planes">Planes</a><a href="#contacto">Contacto</a></div>
+        <div><h4>Trabajos <span class="dot">→</span></h4><a href="#trabajos">Dassamóvil</a><a href="#trabajos">Laboratorio Digital</a><a href="#trabajos">Ser Lucatme</a><a href="#trabajos">Más trabajos</a></div>
+        <div><h4>Servicios <span class="dot">→</span></h4><a href="#servicios">Branding</a><a href="#servicios">Diseño gráfico</a><a href="#servicios">Redes sociales</a><a href="#servicios">Producción audiovisual</a><a href="#servicios">Web y SEO</a></div>
+        <div><h4>Planes <span class="dot">→</span></h4><a href="#planes">Arranque</a><a href="#planes">Crecimiento</a><a href="#planes">Empresa</a></div>
+        <div><h4>Redes</h4><a href="#contacto">Instagram</a><a href="#contacto">TikTok</a><a href="#contacto">LinkedIn</a></div>
+      </div>
+      <div class="bar">
+        <div><b>Nuevos proyectos</b><span>[correo por confirmar]</span></div>
+        <div><b>WhatsApp</b><span>[número por confirmar]</span></div>
+        <div><b>Horario</b><span>[por confirmar]</span></div>
+        <div><b>© 2026 GioSer</b><span>Comunica · Conecta · Crece</span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
