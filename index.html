@@ -53,16 +53,19 @@ b,strong{font-weight:700}
 .nav{display:flex;gap:30px;font-size:14px}
 .nav a{opacity:.92}.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .top .more .dot{background:#fff;color:var(--navy)}
+.top .wrap{max-width:none;padding-inline:clamp(20px,4.2vw,80px)}
 @media (max-width:860px){.nav{display:none}}
 
 /* portada */
-.hero{position:relative;background:var(--navy);color:#fff;padding-block:120px 72px;overflow:hidden}
-.hero .wrap{display:grid;justify-items:center;text-align:center;gap:28px}
-.hero video{width:min(420px,78vw);aspect-ratio:1;border-radius:6px}
-.hero h1{font-size:clamp(30px,3.6vw,50px);line-height:1.12;max-width:17em}
-.hero .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;align-items:center;font-size:13px}
-.hero .meta .pill{background:rgba(255,255,255,.12);color:#fff}
-.hero .meta span.mail{opacity:.75;margin-left:12px}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;color:#fff;overflow:hidden;
+  background:radial-gradient(60% 55% at 70% 30%,rgba(230,55,24,.20),transparent 70%),radial-gradient(70% 60% at 20% 85%,rgba(40,110,170,.28),transparent 70%),linear-gradient(180deg,#03192a,var(--navy) 55%,#020f19)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.45));pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;justify-items:center;text-align:center;gap:40px;padding-top:76px}
+.hero h1{font-size:clamp(34px,3.3vw,62px);line-height:1.08;letter-spacing:-.01em;font-weight:400;max-width:11.5em}
+.hero .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center;font-size:15px;padding:6px 14px 6px 6px;border:1px solid rgba(255,255,255,.35);border-radius:999px}
+.hero .meta .pill{background:rgba(255,255,255,.18);color:#fff;font-size:11px;padding:7px 14px;font-weight:700}
+.hero .meta span.mail{padding-left:18px;margin-left:14px;border-left:1px solid rgba(255,255,255,.35);line-height:1.2}
+@media (max-width:600px){.hero .meta{border-radius:22px;padding:8px}.hero .meta span.mail{border:0;margin:0;padding:4px 0 0;width:100%}}
 
 /* frase de misión */
 .mission{padding-block:clamp(80px,10vw,140px) clamp(48px,6vw,80px);display:grid;justify-items:center;gap:36px}
@@ -194,8 +197,7 @@ b,strong{font-weight:700}
 <main id="inicio">
   <section class="hero">
     <div class="wrap">
-      <video src="img/hero-logo.mp4" poster="img/hero-poster.webp" width="720" height="720" autoplay muted playsinline preload="auto" aria-label="Animación del logo GioSer"></video>
-      <h1>GioSer es una agencia publicitaria que crea, graba, publica y hace crecer marcas en branding, diseño, video, redes y web.</h1>
+      <h1>Estrategia que conecta.<br>Creatividad que vende.</h1>
       <div class="meta"><span class="pill">◉ Lima</span><span class="pill">◉ Todo el Perú</span><span class="mail">correo [por confirmar]</span></div>
     </div>
   </section>
